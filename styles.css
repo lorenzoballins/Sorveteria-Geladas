@@ -1,0 +1,235 @@
+/* Reset de estilo básico */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Faz com que o body ocupe pelo menos a altura da tela */
+}
+
+header {
+    background-color: #f8b400;
+    color: white;
+    padding: 1em 2em; /* Ajuste do padding para dar mais espaço */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+.logo img {
+    max-height: 150px; /* Aumenta a altura da logo */
+}
+
+nav {
+    flex: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumenta o espaçamento entre os itens do menu */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    font-weight: bold; /* Adiciona negrito para destaque */
+    padding: 10px 15px; /* Adiciona padding para criar um botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+nav a:hover {
+    background-color: #f6a900; /* Cor de fundo ao passar o mouse */
+}
+
+main {
+    flex: 1;
+    padding: 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero, .gallery, .location, .about, .contact {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.gallery-images, .location-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-images img, .location-images img {
+    width: 100%;
+    max-width: 250px; /* Ajusta o tamanho máximo das imagens para não serem muito grandes */
+    height: auto;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    text-align: left;
+}
+
+input, textarea {
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Faz com que os campos de formulário ocupem a largura total do formulário */
+}
+
+textarea {
+    height: 150px;
+    resize: vertical; /* Permite redimensionar o textarea apenas na vertical */
+}
+
+button {
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f6a900;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+iframe {
+    max-width: 100%; /* Garante que o iframe não exceda a largura da tela */
+    height: auto; /* Ajusta a altura proporcionalmente */
+    border: 0;
+    margin: 0 auto; /* Centraliza o iframe horizontalmente */
+    display: block; /* Garante que o iframe se comporte como um bloco */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px; /* Reduz o espaçamento em dispositivos menores */
+    }
+
+    nav a {
+        padding: 8px 12px; /* Ajusta o padding em dispositivos menores */
+    }
+
+    .gallery-images img, .location-images img {
+        max-width: 100%; /* Ajusta o tamanho das imagens para não ultrapassar a largura da tela */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .hero p {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte para textos menores */
+    }
+}
+
+.products {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.product-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.product-card span {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f8b400;
+}
+
+.product-card button {
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #f6a900;
+    transform: scale(1.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
